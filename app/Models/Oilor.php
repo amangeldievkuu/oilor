@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Oilor extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'oi',
+    ];
 }
