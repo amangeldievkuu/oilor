@@ -2,31 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oilor;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $users = [
-            [
-                'name' => 'Alex',
-                'age' => 30,
-            ],
-            [
-                'name' => 'Dan',
-                'age' => 25,
-            ],
-            [
-                'name' => 'John',
-                'age' => 17,
-            ]
-        ];
-
+        dump(OIlor::all());
         return view(
             'dashboard',
             [
-                'users' => $users
+                'oilors' => Oilor::orderBy('created_at', 'desc')->get()
             ]
         );
     }
