@@ -13,7 +13,8 @@
                 <form action="{{ route('oilors.destroy', $oilor->id) }}" method="POST">
                     @csrf
                     @method('delete')
-                    <button class="btn btn-danger btn-sm">x</button>
+                    <a href="{{ route('oilors.show', $oilor->id) }}">View</a>
+                    <button class="ms-2 btn btn-danger btn-sm">x</button>
                 </form>
             </div>
         </div>

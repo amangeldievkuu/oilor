@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class OilorController extends Controller
 {
+
+    public function show(Oilor $oi)
+    {
+        return view('ideas.show', [
+            'oilor' => $oi,
+        ]);
+    }
+
     public function store()
     {
 
@@ -23,9 +31,9 @@ class OilorController extends Controller
             ->with('success', 'Idea created successfully!');
     }
 
-    public function destroy($id)
+    public function destroy(Oilor $oi)
     {
-        $idea = Oilor::where('id', $id)->firstOrFail()->delete();
+        $oi->delete();
         return redirect()->route('dashboard')->with('success', 'Idea deleted successfully!');
     }
 }
