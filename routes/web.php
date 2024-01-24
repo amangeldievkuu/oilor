@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::post('/oilor', [OilorController::class, 'store'])->name('oilor.create');
+Route::post('/oilors', [OilorController::class, 'store'])->name('oilors.store');
+
+Route::delete('/oilors/{id}', [OilorController::class, 'destroy'])->name('oilors.destroy');
 
 Route::get('/terms', function () {
     return view('terms');

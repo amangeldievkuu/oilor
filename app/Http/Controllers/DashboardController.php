@@ -12,7 +12,7 @@ class DashboardController extends Controller
         return view(
             'dashboard',
             [
-                'oilors' => Oilor::orderBy('created_at', 'desc')->get()
+                'oilors' => Oilor::orderBy('created_at', 'desc')->paginate(5)
             ]
         );
     }

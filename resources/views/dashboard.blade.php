@@ -38,10 +38,7 @@
             </div>
         </div>
         <div class="col-6">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Idea created Successfully
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            @include('shared.success-message')
             @include('shared.submit-oi')
             <hr>
             @foreach ($oilors as $oilor)
@@ -49,6 +46,7 @@
                     @include('shared.oilor-card')
                 </div>
             @endforeach
+            {{ $oilors->links() }}
         </div>
         <div class="col-3">
             <div class="card">
